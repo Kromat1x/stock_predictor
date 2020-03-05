@@ -4,6 +4,7 @@ from flask_wtf.csrf import CSRFProtect
 from .utils.forms import PaymentForm, StockPriceForm
 from .utils.gateway_factory import Gateway
 from .ml.lstm import StockPredictor
+from keras import backend as K
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
@@ -78,7 +79,7 @@ class is instantiated and then the prediction can be made.
 * In this state of the project, I have provided a trained model file
 and a dataframe file, both needed for prediction. If these two
 were to be deleted, the model needs to be trained again.
-An example of training can be found at line 97.
+An example of training can be found at line 98.
 """
 @app.route('/predict', methods=['POST', 'GET'])
 def MakePrediction():
@@ -96,7 +97,7 @@ def MakePrediction():
             predictor = StockPredictor(split_value=24, backward_batch_size=4, model_name="stock_model.h5", dataframe_file="df.pkl")
             # predictor.train('ml/dow_jones_index.csv')
             predicted_result = predictor.predict(processed_result['predictionDate'])
-
+            K.clear_session()
             return "Predicted closing price: " + str(predicted_result), status.HTTP_200_OK
         else:
             if len(form.errors) > 0:
