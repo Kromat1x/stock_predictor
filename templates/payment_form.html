@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+Payment Form
+{% endblock %}
+
+{% block content %}
+
+<h2 class="title">Payment Form</h2>
+            <form method="POST" action="/">
+              {{ form.csrf_token }}
+              <div class="form-field">{{ form.creditCardNumber.label }} {{ form.creditCardNumber(size=20) }}
+                {% if form.creditCardNumber.errors %}
+                  <ul class="errors">
+                    {% for error in form.creditCardNumber.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              <div class="form-field">{{ form.cardHolder.label }} {{ form.cardHolder }}
+                {% if form.cardHolder.errors %}
+                  <ul class="errors">
+                    {% for error in form.cardHolder.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              <div class="form-field">{{ form.expirationDate.label }} {{ form.expirationDate }}
+                {% if form.expirationDate.errors %}
+                  <ul class="errors">
+                    {% for error in form.expirationDate.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              <div class="form-field">{{ form.securityCode.label }} {{ form.securityCode }}
+                {% if form.securityCode.errors %}
+                  <ul class="errors">
+                    {% for error in form.securityCode.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              <div class="form-field">{{ form.amount.label }} {{ form.amount }}
+                {% if form.amount.errors %}
+                  <ul class="errors">
+                    {% for error in form.amount.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              {{ form.submit }}
+            </form>
+
+{% endblock %}

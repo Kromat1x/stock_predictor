@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Payment Form
+{% endblock %}
+
+{% block content %}
+
+<h2 class="title">Payment Form</h2>
+            <form method="POST" action="/">
+              {{ form.csrf_token }}
+              <div class="form-field">{{ form.predictionDate.label }} {{ form.predictionDate }}
+                {% if form.predictionDate.errors %}
+                  <ul class="errors">
+                    {% for error in form.predictionDate.errors %}
+                      <li><span style="color: red;">{{ error }}</span></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div><br>
+              {{ form.submit }}
+            </form>
+
+{% endblock %}
