@@ -66,3 +66,5 @@ Singura validare a formularului este cea spusa si mai sus, data introdusa trebui
 
 **Dupa mai multe teste, se pare ca dupa ce intorduc o data corecta si primesc predictia, urmatoarele date pe care le introduc fie corecte fie incorecte, vor duce la aceeasi eroare**
 
+**Am rezolvat eroarea de mai sus folosind clear_session() din keras.backend, practic ramaneau parti din sesiunea anterioara, acum functioneaza asa cum ar trebui**
+
