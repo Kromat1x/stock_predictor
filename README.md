@@ -1,4 +1,4 @@
-# stock_predictor
+# payment processor and stock predictor
 
 Proiectul a fost implementat folosind urmatoarele versiuni:  
 Tensorflow 1.14.0  
@@ -58,6 +58,9 @@ Daca formularul nu a fost completat conform cerintelor, response-ul va avea ca s
 **Modelul este antrenat folosind date saptamanale din 25 de saptamani, iar acest model poate realiza predictii pe date care sunt dupa acest interval. Predictia se realizeaza din aproape in aproape, ultima data din setul de date este 24/06/2011, asadar, predictia ce poate fi facuta incepe cu 01/07/2011. Pentru o data mai indepartata de atat, modelul realizeaza predictii succesive, iar fiecare predictie intermediara este adaugata ca data la setul de date, avansand astfel saptamana cu saptamana pana la data dorita.**  
 **Pentru rezultate ok si un timp de rulare care sa nu dureze prea mult, ar fi de preferat sa fie testat cu niste date care sa fie la maxim 5-6 saptamani distanta**
   
-Singura validare a formularului este cea spusa si mai sus, data introdusa trebuie sa fie mai mare decat 01/07/2011, ca predictia sa aiba sens. Pentru ca diferenta de zile intre ultima data cunoscuta si data introdusa este impartita la 7 si apoi se face floor pe ea, practic se ia parte intreaga. In cazul introducerii unei date valide rezultatul obtinut va fi de forma : "Predicted closing price: 162.31044006347656"
-
+Singura validare a formularului este cea spusa si mai sus, data introdusa trebuie sa fie mai mare decat 01/07/2011, ca predictia sa aiba sens. Pentru ca diferenta de zile intre ultima data cunoscuta si data introdusa este impartita la 7 si apoi se face floor pe ea, practic se ia parte intreaga. In cazul introducerii unei date valide rezultatul obtinut va fi de forma : "Predicted closing price: 162.31044006347656"  
+  
+**Din pacate aici exista o problema careia nu i-am putut da de cap, deoarece am observat-o foarte tarziu**  
+**Daca in formularul de predict, se completeaza data corecta si se da predictia (flow normal), dupa care se modifica data cu una gresita si se incearca rulareaza, da un 400 impreuna un un HTML unde se vede si eroarea de validare (flow normal), insa dupa scenariul asta, daca dau o data corecta se primeste 500 internal server error care ar parea sa fie ceva din tensorflow, insa nu am reusit sa-mi dau seama ce il deranjeaza din scenariul de mai sus**  
+**Daca primele incercari pe care le realizez dupa pornirea serverului sunt cu date eronate, iar apoi dau o data corecta, nu are nicio problema si functioneaza normal, problema apare doar in scenariul descris mai sus**
 
