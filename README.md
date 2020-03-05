@@ -26,4 +26,11 @@ Asadar, prima data vom da un GET, iar din response-ul de html primit, luam valoa
   
 Vom folosi acest token cand facem POST. POST-ul se face sub forma de formular, astfel, cand construim requestul de POST, mergem la Body si selectam "form-data".  
 Formularele ce trebuie completate pentru fiecare dintre taskuri sunt urmatoarele:  
-Payment Process  
+  
+Payment Process:  
+![FORM_Pay](/Images/form_payment.png)  
+  
+Stock Predictor:  
+![FORM_Pred](/Images/form_predict.png)
+
+
