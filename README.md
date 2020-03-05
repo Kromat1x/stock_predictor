@@ -14,9 +14,9 @@ set FLASK_APP=server.py
   
 Se pot modifica la flask parametrii precum adresa sau portul, insa testele mele nu au avut nevoie de asta.  
 Am testat cu valorile default: http://127.0.0.1:5000  
-Din adresa asta rezulta impartirea pe cele doua taskuri:
-Payment Process - http://127.0.0.1:5000
-Stock Predictor - http://127.0.0.1:5000/predict
+Din adresa asta rezulta impartirea pe cele doua taskuri:  
+Payment Process - http://127.0.0.1:5000  
+Stock Predictor - http://127.0.0.1:5000/predict  
 
 Dupa pornirea serverului, testarea se poate face atat dintr-un browser cat si dintr-un utilitar precum Postman.  
 In cazul Postman, nu am reusit sa il fac sa salveze singur tokenul CSRF atunci cand fac GET si sa il foloseasca la POST.
