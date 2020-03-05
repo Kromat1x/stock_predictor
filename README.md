@@ -3,7 +3,9 @@
 Proiectul a fost implementat folosind urmatoarele versiuni:  
 Tensorflow 1.14.0  
 Keras 2.2.5  
-Numpy 1.16.0  
+Numpy 1.16.0
+  
+Utilitare de Flask de instalat cu pip: Flask, Flask-WTF, Flask-API
   
 Pentru restul versiunilor am atastat un output de pip freeze in fisierul requirements.txt
 
