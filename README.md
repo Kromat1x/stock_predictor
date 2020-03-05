@@ -64,3 +64,5 @@ Singura validare a formularului este cea spusa si mai sus, data introdusa trebui
 **Daca in formularul de predict, se completeaza data corecta si se da predictia (flow normal), dupa care se modifica data cu una gresita si se incearca rulareaza, da un 400 impreuna un un HTML unde se vede si eroarea de validare (flow normal), insa dupa scenariul asta, daca dau o data corecta se primeste 500 internal server error care ar parea sa fie ceva din tensorflow, insa nu am reusit sa-mi dau seama ce il deranjeaza din scenariul de mai sus**  
 **Daca primele incercari pe care le realizez dupa pornirea serverului sunt cu date eronate, iar apoi dau o data corecta, nu are nicio problema si functioneaza normal, problema apare doar in scenariul descris mai sus**
 
+**Dupa mai multe teste, se pare ca dupa ce intorduc o data corecta si primesc predictia, urmatoarele date pe care le introduc fie corecte fie incorecte, va duce la aceeasi eroare**
+
